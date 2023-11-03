@@ -11,9 +11,12 @@ export class SharedSidebarComponent {
   public items: string[] = [];
 
   constructor(private gifServ: GifsService) {
-
   }
   get tags() {
     return this.gifServ.tagsHistory;
+  }
+
+  callItem(item: string) {
+    this.gifServ.searchTag(item);
   }
 }
